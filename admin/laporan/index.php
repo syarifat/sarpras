@@ -109,10 +109,35 @@ require_once __DIR__ . '/../../includes/header.php';
             <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 <i class="fas fa-filter mr-2"></i>Filter
             </button>
-            <button type="button" onclick="window.print()" class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
-                <i class="fas fa-print mr-2"></i>Cetak
-            </button>
         </form>
+    </div>
+
+    <!-- Export Buttons -->
+    <div class="bg-white rounded-xl shadow-sm p-4">
+        <h3 class="text-sm font-semibold text-gray-700 mb-3">Export Data</h3>
+        <div class="flex flex-wrap gap-3">
+            <a href="export.php?type=peminjaman&format=csv&start_date=<?= e($startDate) ?>&end_date=<?= e($endDate) ?>"
+                class="inline-flex items-center px-3 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition text-sm">
+                <i class="fas fa-file-csv mr-2"></i>Peminjaman (CSV)
+            </a>
+            <a href="export.php?type=pengaduan&format=csv&start_date=<?= e($startDate) ?>&end_date=<?= e($endDate) ?>"
+                class="inline-flex items-center px-3 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition text-sm">
+                <i class="fas fa-file-csv mr-2"></i>Pengaduan (CSV)
+            </a>
+            <a href="export.php?type=sarpras&format=csv"
+                class="inline-flex items-center px-3 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition text-sm">
+                <i class="fas fa-file-csv mr-2"></i>Inventaris (CSV)
+            </a>
+            <a href="export.php?type=maintenance&format=csv&start_date=<?= e($startDate) ?>&end_date=<?= e($endDate) ?>"
+                class="inline-flex items-center px-3 py-2 bg-yellow-100 text-yellow-700 rounded-lg hover:bg-yellow-200 transition text-sm">
+                <i class="fas fa-file-csv mr-2"></i>Maintenance (CSV)
+            </a>
+            <a href="export.php?type=peminjaman&format=print&start_date=<?= e($startDate) ?>&end_date=<?= e($endDate) ?>"
+                target="_blank"
+                class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition text-sm">
+                <i class="fas fa-print mr-2"></i>Cetak Peminjaman
+            </a>
+        </div>
     </div>
 
     <!-- Summary Cards -->

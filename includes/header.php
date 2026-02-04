@@ -130,6 +130,13 @@ $currentRole = $currentUser['role'] ?? '';
                             </a>
                         </div>
                         <div class="mb-6">
+                            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Perawatan</p>
+                            <a href="/sarpras_lagi/admin/maintenance/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                                <i class="fas fa-tools w-5 mr-3"></i>
+                                Jadwal Maintenance
+                            </a>
+                        </div>
+                        <div class="mb-6">
                             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Laporan</p>
                             <a href="/sarpras_lagi/admin/laporan/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-chart-bar w-5 mr-3"></i>

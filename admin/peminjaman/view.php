@@ -48,6 +48,11 @@ require_once __DIR__ . '/../../includes/header.php';
                     <i class="fas fa-check mr-2"></i>Proses
                 </a>
             <?php endif; ?>
+            <?php if ($peminjaman['status'] === 'approved'): ?>
+                <a href="inspection.php?id=<?= $id ?>" class="inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition">
+                    <i class="fas fa-clipboard-check mr-2"></i>Serah Terima
+                </a>
+            <?php endif; ?>
             <?php if (in_array($peminjaman['status'], ['approved', 'active'])): ?>
                 <a href="receipt.php?id=<?= $id ?>" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                     <i class="fas fa-print mr-2"></i>Cetak Bukti
