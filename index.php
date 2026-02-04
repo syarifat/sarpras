@@ -108,15 +108,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="space-y-2 text-sm text-gray-600">
                     <div class="flex justify-between">
                         <span><i class="fas fa-user-shield text-red-500 w-5"></i> Admin:</span>
-                        <code class="bg-gray-200 px-2 rounded">admin / password123</code>
+                        <code class="bg-gray-200 px-2 rounded">admin / password</code>
                     </div>
                     <div class="flex justify-between">
                         <span><i class="fas fa-user-tie text-blue-500 w-5"></i> Petugas:</span>
-                        <code class="bg-gray-200 px-2 rounded">petugas1 / password123</code>
+                        <code class="bg-gray-200 px-2 rounded">petugas1 / password</code>
                     </div>
                     <div class="flex justify-between">
                         <span><i class="fas fa-user text-green-500 w-5"></i> User:</span>
-                        <code class="bg-gray-200 px-2 rounded">guru1 / password123</code>
+                        <code class="bg-gray-200 px-2 rounded">guru1 / password</code>
                     </div>
                 </div>
             </div>
