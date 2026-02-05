@@ -5,6 +5,9 @@
  * Sarpras Management System
  */
 
+// Set timezone to Indonesia (WIB)
+date_default_timezone_set('Asia/Jakarta');
+
 // Cloud Database (Filess.io)
 define('DB_HOST', '60vwjf.h.filess.io');
 define('DB_PORT', '61002');
@@ -29,6 +32,9 @@ function getConnection()
                 PDO::ATTR_EMULATE_PREPARES => false,
             ];
             $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+
+            // Set MySQL timezone to Indonesia (WIB = UTC+7)
+            $pdo->exec("SET time_zone = '+07:00'");
         } catch (PDOException $e) {
             die("Database connection failed: " . $e->getMessage());
         }

@@ -84,8 +84,9 @@ CREATE TABLE IF NOT EXISTS pengaduan (
     judul VARCHAR(200) NOT NULL,
     deskripsi TEXT NOT NULL,
     lokasi VARCHAR(100),
+    jenis_sarpras VARCHAR(100),
     foto VARCHAR(255),
-    status ENUM('pending', 'proses', 'selesai', 'ditolak') DEFAULT 'pending',
+    status ENUM('pending', 'proses', 'selesai', 'ditutup') DEFAULT 'pending',
     prioritas ENUM('rendah', 'sedang', 'tinggi') DEFAULT 'sedang',
     catatan_admin TEXT,
     handled_by INT,
@@ -93,6 +94,17 @@ CREATE TABLE IF NOT EXISTS pengaduan (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (handled_by) REFERENCES users(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- Catatan Pengaduan (untuk tracking tindak lanjut)
+CREATE TABLE IF NOT EXISTS catatan_pengaduan (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pengaduan_id INT NOT NULL,
+    user_id INT NOT NULL,
+    catatan TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (pengaduan_id) REFERENCES pengaduan(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 -- Activity Log

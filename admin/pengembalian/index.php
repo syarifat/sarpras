@@ -30,7 +30,7 @@ $recentReturns = fetchAll("
     JOIN peminjaman pm ON pg.peminjaman_id = pm.id 
     JOIN users u ON pm.user_id = u.id 
     JOIN sarpras s ON pm.sarpras_id = s.id 
-    LEFT JOIN users pr ON pg.processed_by = pr.id
+    LEFT JOIN users pr ON pg.diterima_oleh = pr.id
     ORDER BY pg.created_at DESC 
     LIMIT 20
 ");

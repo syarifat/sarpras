@@ -6,11 +6,24 @@
  */
 
 // Auto-detect base URL based on environment
-// For Vercel deployment, use root path
+// For production hosting (Vercel, InfinityFree, etc), use root path
 // For local development (Laragon), use /sarpras_lagi/
 if (!defined('BASE_URL')) {
-    $isVercel = isset($_SERVER['VERCEL']) || strpos($_SERVER['HTTP_HOST'] ?? '', 'vercel.app') !== false || strpos($_SERVER['HTTP_HOST'] ?? '', 'sat-project.me') !== false;
-    define('BASE_URL', $isVercel ? '' : '/sarpras_lagi');
+    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+
+    // Check if running on cloud/production hosting
+    $isProduction = isset($_SERVER['VERCEL'])
+        || strpos($host, 'vercel.app') !== false
+        || strpos($host, 'sat-project.me') !== false
+        || strpos($host, 'epizy.com') !== false      // InfinityFree
+        || strpos($host, 'infinityfree') !== false   // InfinityFree
+        || strpos($host, '000webhostapp') !== false  // 000webhost
+        || strpos($host, 'rf.gd') !== false;         // InfinityFree alt domain
+
+    // If running locally (localhost or laragon), use subfolder path
+    $isLocal = strpos($host, 'localhost') !== false || strpos($host, '127.0.0.1') !== false;
+
+    define('BASE_URL', ($isProduction || !$isLocal) ? '' : '/sarpras_lagi');
 }
 
 /**
