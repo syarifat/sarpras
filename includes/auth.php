@@ -8,6 +8,7 @@
 session_start();
 
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/functions.php';
 
 /**
  * Check if user is logged in
@@ -23,7 +24,7 @@ function isLoggedIn()
 function requireLogin()
 {
     if (!isLoggedIn()) {
-        header('Location: /sarpras_lagi/index.php');
+        header('Location: ' . url('index.php'));
         exit;
     }
 }
@@ -70,7 +71,7 @@ function requireRole($roles)
     if (!hasRole($roles)) {
         header('HTTP/1.0 403 Forbidden');
         echo '<h1>403 - Access Denied</h1><p>Anda tidak memiliki akses ke halaman ini.</p>';
-        echo '<a href="/sarpras_lagi/">Kembali ke beranda</a>';
+        echo '<a href="' . url('/') . '">Kembali ke beranda</a>';
         exit;
     }
 }
@@ -110,7 +111,7 @@ function logout()
     session_unset();
     session_destroy();
 
-    header('Location: /sarpras_lagi/index.php');
+    header('Location: ' . url('index.php'));
     exit;
 }
 
@@ -120,18 +121,18 @@ function logout()
 function getRedirectUrl()
 {
     if (!isLoggedIn()) {
-        return '/sarpras_lagi/index.php';
+        return url('index.php');
     }
 
     switch ($_SESSION['role']) {
         case 'admin':
-            return '/sarpras_lagi/admin/dashboard.php';
+            return url('admin/dashboard.php');
         case 'petugas':
-            return '/sarpras_lagi/petugas/dashboard.php';
+            return url('petugas/dashboard.php');
         case 'user':
-            return '/sarpras_lagi/user/dashboard.php';
+            return url('user/dashboard.php');
         default:
-            return '/sarpras_lagi/index.php';
+            return url('index.php');
     }
 }
 

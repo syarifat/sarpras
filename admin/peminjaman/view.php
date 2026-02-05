@@ -183,7 +183,7 @@ require_once __DIR__ . '/../../includes/header.php';
             <?php if ($pengembalian['foto_pengembalian']): ?>
                 <div class="mt-4">
                     <p class="text-sm text-gray-500 mb-2">Foto Pengembalian</p>
-                    <img src="/sarpras_lagi/<?= e($pengembalian['foto_pengembalian']) ?>" class="w-48 h-48 object-cover rounded-lg">
+                    <img src="<?= url($pengembalian['foto_pengembalian']) ?>" class="w-48 h-48 object-cover rounded-lg">
                 </div>
             <?php endif; ?>
         </div>

@@ -107,7 +107,7 @@ require_once __DIR__ . '/../../includes/header.php';
         <?php if ($pengaduan['foto']): ?>
             <div class="mt-6">
                 <p class="text-gray-500 mb-2">Foto</p>
-                <img src="/sarpras_lagi/<?= e($pengaduan['foto']) ?>" alt="Foto" class="max-w-md rounded-lg">
+                <img src="<?= url($pengaduan['foto']) ?>" alt="Foto" class="max-w-md rounded-lg">
             </div>
         <?php endif; ?>
     </div>

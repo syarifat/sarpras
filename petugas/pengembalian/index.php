@@ -1,4 +1,5 @@
 <?php
-// Redirect to admin pengembalian (petugas has access)
-header('Location: /sarpras_lagi/admin/pengembalian/');
+// Redirect to admin pengembalian
+require_once __DIR__ . '/../../includes/functions.php';
+header('Location: ' . url('admin/pengembalian/'));
 exit;

@@ -5,6 +5,23 @@
  * Sarpras Management System
  */
 
+// Auto-detect base URL based on environment
+// For Vercel deployment, use root path
+// For local development (Laragon), use /sarpras_lagi/
+if (!defined('BASE_URL')) {
+    $isVercel = isset($_SERVER['VERCEL']) || strpos($_SERVER['HTTP_HOST'] ?? '', 'vercel.app') !== false || strpos($_SERVER['HTTP_HOST'] ?? '', 'sat-project.me') !== false;
+    define('BASE_URL', $isVercel ? '' : '/sarpras_lagi');
+}
+
+/**
+ * Generate URL with base path
+ */
+function url($path = '')
+{
+    $path = ltrim($path, '/');
+    return BASE_URL . '/' . $path;
+}
+
 /**
  * Sanitize input string
  */

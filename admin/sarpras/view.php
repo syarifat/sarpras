@@ -107,7 +107,7 @@ require_once __DIR__ . '/../../includes/header.php';
         <div class="bg-white rounded-xl shadow-sm p-6">
             <h2 class="text-lg font-semibold text-gray-800 mb-4">Foto</h2>
             <?php if ($sarpras['foto']): ?>
-                <img src="/sarpras_lagi/<?= e($sarpras['foto']) ?>" alt="Foto sarpras" class="w-full rounded-lg">
+                <img src="<?= url($sarpras['foto']) ?>" alt="Foto sarpras" class="w-full rounded-lg">
             <?php else: ?>
                 <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
                     <i class="fas fa-image text-4xl text-gray-400"></i>

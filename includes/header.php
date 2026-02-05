@@ -62,7 +62,7 @@ $currentRole = $currentUser['role'] ?? '';
                         <button id="sidebar-toggle" class="p-2 rounded-md text-gray-600 hover:bg-gray-100 lg:hidden">
                             <i class="fas fa-bars text-xl"></i>
                         </button>
-                        <a href="/sarpras_lagi/" class="flex items-center ml-2 lg:ml-0">
+                        <a href="<?= url('/') ?>" class="flex items-center ml-2 lg:ml-0">
                             <i class="fas fa-school text-primary-600 text-2xl mr-2"></i>
                             <span class="font-bold text-xl text-gray-800">Sarpras<span class="text-primary-600">App</span></span>
                         </a>
@@ -77,7 +77,7 @@ $currentRole = $currentUser['role'] ?? '';
                                 <?= ucfirst($currentRole) ?>
                             </span>
                         </div>
-                        <a href="/sarpras_lagi/logout.php" class="flex items-center px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg transition">
+                        <a href="<?= url('logout.php') ?>" class="flex items-center px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg transition">
                             <i class="fas fa-sign-out-alt mr-1"></i>
                             <span class="hidden sm:inline">Logout</span>
                         </a>
@@ -94,55 +94,55 @@ $currentRole = $currentUser['role'] ?? '';
                         <!-- Admin Menu -->
                         <div class="mb-6">
                             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Dashboard</p>
-                            <a href="/sarpras_lagi/admin/dashboard.php" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/dashboard.php') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-tachometer-alt w-5 mr-3"></i>
                                 Dashboard
                             </a>
                         </div>
                         <div class="mb-6">
                             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Master Data</p>
-                            <a href="/sarpras_lagi/admin/users/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/users/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-users w-5 mr-3"></i>
                                 Pengguna
                             </a>
-                            <a href="/sarpras_lagi/admin/kategori/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/kategori/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-tags w-5 mr-3"></i>
                                 Kategori
                             </a>
-                            <a href="/sarpras_lagi/admin/sarpras/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/sarpras/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-boxes w-5 mr-3"></i>
                                 Sarpras
                             </a>
                         </div>
                         <div class="mb-6">
                             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Transaksi</p>
-                            <a href="/sarpras_lagi/admin/peminjaman/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/peminjaman/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-hand-holding w-5 mr-3"></i>
                                 Peminjaman
                             </a>
-                            <a href="/sarpras_lagi/admin/pengembalian/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/pengembalian/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-undo w-5 mr-3"></i>
                                 Pengembalian
                             </a>
-                            <a href="/sarpras_lagi/admin/pengaduan/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/pengaduan/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-exclamation-triangle w-5 mr-3"></i>
                                 Pengaduan
                             </a>
                         </div>
                         <div class="mb-6">
                             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Perawatan</p>
-                            <a href="/sarpras_lagi/admin/maintenance/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/maintenance/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-tools w-5 mr-3"></i>
                                 Jadwal Maintenance
                             </a>
                         </div>
                         <div class="mb-6">
                             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Laporan</p>
-                            <a href="/sarpras_lagi/admin/laporan/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/laporan/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-chart-bar w-5 mr-3"></i>
                                 Laporan & Statistik
                             </a>
-                            <a href="/sarpras_lagi/admin/laporan/activity_log.php" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/laporan/activity_log.php') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-history w-5 mr-3"></i>
                                 Activity Log
                             </a>
@@ -152,22 +152,22 @@ $currentRole = $currentUser['role'] ?? '';
                         <!-- Petugas Menu -->
                         <div class="mb-6">
                             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Dashboard</p>
-                            <a href="/sarpras_lagi/petugas/dashboard.php" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('petugas/dashboard.php') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-tachometer-alt w-5 mr-3"></i>
                                 Dashboard
                             </a>
                         </div>
                         <div class="mb-6">
                             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Transaksi</p>
-                            <a href="/sarpras_lagi/admin/peminjaman/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/peminjaman/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-hand-holding w-5 mr-3"></i>
                                 Peminjaman
                             </a>
-                            <a href="/sarpras_lagi/admin/pengembalian/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/pengembalian/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-undo w-5 mr-3"></i>
                                 Pengembalian
                             </a>
-                            <a href="/sarpras_lagi/admin/pengaduan/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('admin/pengaduan/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-exclamation-triangle w-5 mr-3"></i>
                                 Pengaduan
                             </a>
@@ -177,18 +177,18 @@ $currentRole = $currentUser['role'] ?? '';
                         <!-- User Menu -->
                         <div class="mb-6">
                             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Dashboard</p>
-                            <a href="/sarpras_lagi/user/dashboard.php" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('user/dashboard.php') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-tachometer-alt w-5 mr-3"></i>
                                 Dashboard
                             </a>
                         </div>
                         <div class="mb-6">
                             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Layanan</p>
-                            <a href="/sarpras_lagi/user/peminjaman/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('user/peminjaman/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-hand-holding w-5 mr-3"></i>
                                 Peminjaman Saya
                             </a>
-                            <a href="/sarpras_lagi/user/pengaduan/" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                            <a href="<?= url('user/pengaduan/') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                                 <i class="fas fa-bullhorn w-5 mr-3"></i>
                                 Pengaduan Saya
                             </a>
@@ -198,7 +198,7 @@ $currentRole = $currentUser['role'] ?? '';
                     <!-- Profile Section (All Roles) -->
                     <div class="mb-6">
                         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Profil</p>
-                        <a href="/sarpras_lagi/profile.php" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                        <a href="<?= url('profile.php') ?>" class="sidebar-link flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition">
                             <i class="fas fa-user-cog w-5 mr-3"></i>
                             Profil Saya
                         </a>

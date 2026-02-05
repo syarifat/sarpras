@@ -157,7 +157,7 @@ require_once __DIR__ . '/../../includes/header.php';
                     <label class="block text-sm font-medium text-gray-700 mb-2">Foto</label>
                     <?php if ($sarpras['foto']): ?>
                         <div class="mb-3">
-                            <img src="/sarpras_lagi/<?= e($sarpras['foto']) ?>" alt="Foto sarpras" class="w-32 h-32 object-cover rounded-lg">
+                            <img src="<?= url($sarpras['foto']) ?>" alt="Foto sarpras" class="w-32 h-32 object-cover rounded-lg">
                             <p class="text-xs text-gray-500 mt-1">Foto saat ini</p>
                         </div>
                     <?php endif; ?>

@@ -168,7 +168,7 @@ require_once __DIR__ . '/../includes/header.php';
                     <h2 class="text-lg font-semibold text-gray-800">
                         <i class="fas fa-hand-holding text-blue-500 mr-2"></i>Peminjaman Terbaru
                     </h2>
-                    <a href="/sarpras_lagi/admin/peminjaman/" class="text-sm text-blue-600 hover:underline">Lihat Semua</a>
+                    <a href="<?= url('admin/peminjaman/') ?>" class="text-sm text-blue-600 hover:underline">Lihat Semua</a>
                 </div>
             </div>
             <div class="divide-y">
@@ -200,7 +200,7 @@ require_once __DIR__ . '/../includes/header.php';
                     <h2 class="text-lg font-semibold text-gray-800">
                         <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>Pengaduan Terbaru
                     </h2>
-                    <a href="/sarpras_lagi/admin/pengaduan/" class="text-sm text-blue-600 hover:underline">Lihat Semua</a>
+                    <a href="<?= url('admin/pengaduan/') ?>" class="text-sm text-blue-600 hover:underline">Lihat Semua</a>
                 </div>
             </div>
             <div class="divide-y">
